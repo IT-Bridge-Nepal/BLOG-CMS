@@ -1,7 +1,7 @@
 <?php include("partials/top.php"); ?>
                         <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
+                            Users
+                           
                             <p></p>
                         </h1>
                         <ol class="breadcrumb">
