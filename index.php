@@ -53,8 +53,24 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+
                 </ul>
+                <div style="float: right;">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Login</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#">Admin</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -135,6 +151,11 @@
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
+                <div class="well">
+                    <a class="btn btn-primary" href="login.php">Login </a>
+                    <a class="btn btn-primary" href="signup.php">Sign Up</a>
+
+                </div>
 
                 <!-- Blog Search Well -->
                 <div class="well">
@@ -144,7 +165,7 @@
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
-                        </button>
+                            </button>
                         </span>
                     </div>
                     <!-- /.input-group -->

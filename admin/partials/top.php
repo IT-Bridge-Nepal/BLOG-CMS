@@ -90,10 +90,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"> Users </a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="users.php">Admin</a>
+                                <a href="manage-admin.php">Admin</a>
                             </li>
                             <li>
-                                <a href="users.php">User</a>
+                                <a href="manage-users.php">User</a>
                             </li>
                         </ul>
                     </li>
