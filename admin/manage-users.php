@@ -1,6 +1,6 @@
 <?php include("partials/top.php"); ?>
 <h1 class="page-header">
-    Users
+    Manage Users
 
     <p></p>
 </h1>

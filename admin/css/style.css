@@ -1,0 +1,11 @@
+table tr th {
+    border-bottom: 1px solid gray;
+    padding: 1%;
+    text-align: center;
+}
+.tbl-30{
+    width: 30%;
+}
+.tbl{
+    width: 100%;
+}
