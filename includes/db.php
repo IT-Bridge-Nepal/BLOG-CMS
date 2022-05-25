@@ -1,12 +1,7 @@
 <?php
-$con = mysqli_connect("localhost", "binaya", "Password@1", "blog_cms");
+$con = mysqli_connect("localhost", "root", "", "cms");
 if (!$con) {
     die("not connected");
+} else {
+    echo "success";
 }
-?>
-<!-- <?php
-        $con = mysqli_connect("localhost", "root", "", "cms");
-        if (!$con) {
-            die("not connected");
-        }
-        ?> -->

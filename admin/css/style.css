@@ -9,3 +9,31 @@ table tr th {
 .tbl{
     width: 100%;
 }
+table tr td{
+    padding: 2%;
+}
+.btn-third{
+    padding: 1%;
+    margin: 1%;
+    background-color:red;
+    color: whitesmokes;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-second{
+    padding: 1%;
+    background-color:rgb(172, 127, 255);
+    color:whitesmoke;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-first{
+    padding: 1%;
+    background-color:greenyellow;
+    color: green;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+}
