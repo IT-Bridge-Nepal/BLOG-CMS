@@ -19,8 +19,8 @@
             <?php
             $sql = "SELECT * from tbl_admin";
             $res = mysqli_query($conn, $sql);
-            var_dump($res);
-            die;
+            // var_dump($res);
+            // die;
             if ($res == TRUE) {
                 $count = mysqli_num_rows($res);
                 $sn = 1;
@@ -31,7 +31,7 @@
                         $username = $row['username'];
                         $password = $row['password'];
                         $email = $row['email'];
-                        $image_name = ['image_name'];
+                        $image_name = $row['image_name'];
 
 
 
@@ -42,8 +42,23 @@
                             <td><?php echo $sn++; ?></td>
                             <td><?php echo $full_name; ?></td>
                             <td><?php echo $username; ?></td>
-                            <td><?php $email; ?></td>
-                            <td><?php echo $image_name; ?></td>
+                            <td><?php echo $email; ?></td>
+                            <td><?php
+                                if($image_name!="")
+                                {
+                                    // display image
+                                    ?>
+                                    <img src="<?php echo SITEURL; ?>images/users/<?php echo $image_name; ?>"width="100px">
+                                    <?php
+
+                                }
+                                else
+                                {
+                                    // display error message
+                                    echo "<div class=error>Image not added</div>";
+
+                                }
+                              ?></td>
                             <td>
                                 <a href="#" class="btn-first">Change Password</a>
                                 <a href="#" class="btn-second">Update Admin</a>
