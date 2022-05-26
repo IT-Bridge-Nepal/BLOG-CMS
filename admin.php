@@ -1,4 +1,6 @@
 <?php include("partials-front.php/menu.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +55,7 @@
                         <div class="form-group">
                             <input type="file" name="image">
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
                     </form>
                 </div>
 
@@ -61,6 +63,7 @@
         </div>
     </div>
 </body>
+
 
 </html>
 <?php include("partials-front.php/footer.php"); ?>

@@ -19,6 +19,8 @@
             <?php
             $sql = "SELECT * from tbl_admin";
             $res = mysqli_query($conn, $sql);
+            var_dump($res);
+            die;
             if ($res == TRUE) {
                 $count = mysqli_num_rows($res);
                 $sn = 1;
