@@ -44,25 +44,22 @@
                             <td><?php echo $username; ?></td>
                             <td><?php echo $email; ?></td>
                             <td><?php
-                                if($image_name!="")
-                                {
+                                if ($image_name != "") {
                                     // display image
-                                    ?>
-                                    <img src="<?php echo SITEURL; ?>images/users/<?php echo $image_name; ?>"width="100px">
-                                    <?php
+                                ?>
+                                    <img src="<?php echo SITEURL; ?>images/users/<?php echo $image_name; ?>" width="100px">
+                                <?php
 
-                                }
-                                else
-                                {
+                                } else {
                                     // display error message
                                     echo "<div class=error>Image not added</div>";
-
                                 }
-                              ?></td>
+                                ?>
+                            </td>
                             <td>
                                 <a href="#" class="btn-first">Change Password</a>
-                                <a href="#" class="btn-second">Update Admin</a>
-                                <a href="delete.admin.php" class="btn-third">Delete Admin</a>
+                                <a href="<?php echo SITEURL ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-second">Update Admin</a>
+                                <a href="<?php echo SITEURL ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-third"> delete admin </a>
                             </td>
                         </tr>
             <?php
