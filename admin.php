@@ -31,16 +31,16 @@
                 <div class="col-md-6">
                     <h2>Login Here</h2>
 
-                    <form action="" method="post">
+                    <form action="admin-login.php" method="post">
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" name="user" class="form-control" required>
+                            <input type="text" name="username" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Login</button>
 
                     </form>
                 </div>
