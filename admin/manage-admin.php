@@ -4,8 +4,16 @@
     <div class="warper">
         <h1 class="page-header"><strong>
                 Manage admin</strong></h1>
+        <br>
+        <?php
+        if (isset($_SESSION['delete'])) {
+            echo ($_SESSION['delete']);
+            unset($_SESSION['delete']);
+        }
 
+        ?>
         <br><br>
+
 
         <table class="tbl">
             <tr>
@@ -59,7 +67,7 @@
                             <td>
                                 <a href="#" class="btn-first">Change Password</a>
                                 <a href="<?php echo SITEURL ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-second">Update Admin</a>
-                                <a href="<?php echo SITEURL ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-third"> delete admin </a>
+                                <a href="<?php echo SITEURL ?>admin/delete-admin.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-third"> delete admin </a>
                             </td>
                         </tr>
             <?php
