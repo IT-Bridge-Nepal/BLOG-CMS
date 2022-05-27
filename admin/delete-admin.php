@@ -25,6 +25,6 @@ if ($res == true) {
 } else {
     //failed to delete admin
     //echo "failed to delete admin";
-    $_SESSION['delete'] = "<div class = 'error'>failed to deleted try again.</div>";
+    $_SESSION['delete'] = "<div class = 'error'>failed to delete try again.</div>";
     header('location:' . SITEURL . 'admin/manage-admin.php');
 }
