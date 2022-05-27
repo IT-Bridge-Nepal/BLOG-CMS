@@ -10,6 +10,11 @@
             echo ($_SESSION['delete']);
             unset($_SESSION['delete']);
         }
+        
+    if (isset($_SESSION['update'])) {
+        echo $_SESSION['update']; //Display session
+        unset($_SESSION['update']); //Remove session
+    }
 
         ?>
         <br><br>

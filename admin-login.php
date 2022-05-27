@@ -1,5 +1,6 @@
 <?php 
 include("includes/db.php"); 
+// session_start();
 
 if (isset($_POST['submit'])) {
     //echo "button clicked";
@@ -16,12 +17,15 @@ if (isset($_POST['submit'])) {
 
     if ($count==1) {
         $_SESSION['login'] = "<div class='success'>login success</div>";
+                $_SESSION['user'] = $username;
+
         header('location:'.SITEURL.'admin/index.php');
     }
-} else {
+ else {
     //button not clicked
-    $_SESSION['login'] = "<div class='error'>password or user name didinot matched</div>";
+    $_SESSION['login'] = "<div class='error'>Password or Username didnot matched</div>";
     header('location:'.SITEURL.'admin.php');
+}
 }
 
 

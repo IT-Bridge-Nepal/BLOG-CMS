@@ -1,6 +1,6 @@
-<?php include("partials/top.php"); ?>
-
 <?php
+ob_start();
+include("partials/top.php");
 $id = $_GET['id'];
 $sql = "SELECT * FROM tbl_admin WHERE id=$id";
 $res = mysqli_query($conn, $sql);
@@ -93,7 +93,8 @@ if (isset($_POST['submit'])) {
 
 
         if ($image_name != "") {
-            $ext = end(explode('.', $image_name));
+            $e = explode('.', $image_name);
+            $ext = end($e);
 
             $image_name = "Admin_image" . rand(000, 999) . '.' . $ext;
 
@@ -105,18 +106,18 @@ if (isset($_POST['submit'])) {
 
             if ($upload == false) {
                 $_SESSION['upload'] = "Failed to upload image";
-                header('location:manage-admin.php');
+                header('location:'.SITEURL.'admin/manage-admin.php');
                 die();
             }
 
             if ($current_image != "") {
                 $path = "../images/users/" . $current_image;
 
-                $remove = unlink($path);
+                $remove = unlink(realpath($path));
 
                 if ($remove == false) {
                     $_SESSION['failed-remove'] = "Failed to remove image";
-                    header("location:manage-admin.php");
+                    header('location:'.SITEURL.'admin/manage-admin.php');
                     die();
                 }
             }
@@ -137,14 +138,14 @@ if (isset($_POST['submit'])) {
     $res2 = mysqli_query($conn, $sql2);
 
     if ($res2 == true) {
-        $_SESSION['update'] = "Admin updated succesfully";
-        header("location:manage-admin.php");
+        $_SESSION['update'] = "<div class='success'>Updated Successfully</div>";
+        header('location:'.SITEURL.'admin/manage-admin.php');
     } else {
-        $_SESSION['update'] = "Failed to update admin";
-        header("location:manage-admin.php");
+        $_SESSION['update'] = "<div class='error'>Update Failed</div>";
+        header('location:'.SITEURL.'admin/manage-admin.php');
     }
 }
 ?>
 
 </html>
-<?php include("partials/bottom.php"); ?>
+<?php include("partials/bottom.php");?>

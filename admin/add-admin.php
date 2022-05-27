@@ -58,14 +58,14 @@ if (isset($_POST['submit'])) {
     if ($res == TRUE) {
         // echo "Data Inserted";
         // session
-        $_SESSION['add'] = "Admin added successfully";
+        $_SESSION['add'] = "<div class='success'>Admin Added Successfully</div>";
         // redirect page
-        header("location:../admin.php");
+        header('location:'.SITEURL.'admin.php');
     } else {
         // echo "Data not inserted";
         // session
-        $_SESSION['add'] = "Failed to add admin";
+        $_SESSION['add'] = "<div class='error'>Admin Add Failed</div>";
         // redirect page
-        header("location:../admin.php");
+        header('location:'.SITEURL.'admin.php');
     }
 }

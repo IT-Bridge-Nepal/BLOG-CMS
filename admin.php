@@ -1,8 +1,5 @@
-<?php include("partials-front.php/menu.php"); ?>
-
-
-
-
+<?php include("partials-front.php/menu.php"); 
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +12,31 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION['no-login-message'])) {
+        echo $_SESSION['no-login-message']; //Display session
+        unset($_SESSION['no-login-message']); //Remove session
+    }
+    ?>
     
     <div class="container">
         <div class="login-box">
+                             
             <div class="row">
                 <div class="col-md-6">
                     <h2>Login Here</h2>
+                    <br>
+                    <br>
+                    <?php
+    if (isset($_SESSION['login'])) {
+        echo $_SESSION['login']; //Display session
+        unset($_SESSION['login']); //Remove session
+    }
+    ?>
+    <br>
+    <br>
+   
+
 
                     <form action="admin-login.php" method="post">
                         <div class="form-group">
@@ -37,6 +53,9 @@
                 </div>
                 <div class="col-md-6 login-right">
                     <h2>Register Here</h2>
+                    <br>
+                    <br>
+
                     <?php
     if (isset($_SESSION['add'])) {
         echo $_SESSION['add']; //Display session
@@ -47,6 +66,8 @@
         unset($_SESSION['upload']); //Remove session
     }
     ?>
+    <br>
+    <br>
 
                     <form action="admin/add-admin.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
