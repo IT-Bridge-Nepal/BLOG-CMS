@@ -15,16 +15,7 @@
 </head>
 
 <body>
-    <?php
-    if (isset($_SESSION['add'])) {
-        echo $_SESSION['add']; //Display session
-        unset($_SESSION['add']); //Remove session
-    }
-    if (isset($_SESSION['upload'])) {
-        echo $_SESSION['upload']; //Display session
-        unset($_SESSION['upload']); //Remove session
-    }
-    ?>
+    
     <div class="container">
         <div class="login-box">
             <div class="row">
@@ -46,6 +37,16 @@
                 </div>
                 <div class="col-md-6 login-right">
                     <h2>Register Here</h2>
+                    <?php
+    if (isset($_SESSION['add'])) {
+        echo $_SESSION['add']; //Display session
+        unset($_SESSION['add']); //Remove session
+    }
+    if (isset($_SESSION['upload'])) {
+        echo $_SESSION['upload']; //Display session
+        unset($_SESSION['upload']); //Remove session
+    }
+    ?>
 
                     <form action="admin/add-admin.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
