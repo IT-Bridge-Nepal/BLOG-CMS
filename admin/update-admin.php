@@ -39,7 +39,7 @@ if ($res == true) {
 
                 <div class="col-md-6 login-right">
                     <h2>Update Admin</h2>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Full Name:</label>
                             <input type="text" name="full_name" class="form-control" value="<?php echo $full_name; ?>" required>
@@ -54,14 +54,25 @@ if ($res == true) {
                         </div>
                         <div class="form-group">
                             <label>Current Image:</label>
-                            <img src="">
+                            <?php
+                            if ($current_image != "") {
+                            ?>
+                                <img src="../images/users/<?php echo $current_image; ?>" width="100px">
+                            <?php
+                            } else {
+                                echo "Image not available";
+                            }
+                            ?>
+
                         </div>
 
                         <div class="form-group">
                             <label>New Image:</label>
                             <input type="file" name="image">
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Update">
                     </form>
                 </div>
             </div>
@@ -74,17 +85,21 @@ if (isset($_POST['submit'])) {
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $current_image = $_POST['current_image'];
+
 
     if (isset($_FILES['image']['name'])) {
         $image_name = $_FILES['image']['name'];
+
 
         if ($image_name != "") {
             $ext = end(explode('.', $image_name));
 
             $image_name = "Admin_image" . rand(000, 999) . '.' . $ext;
 
+
             $source_path = $_FILES['image']['tmp_name'];
-            $destination_path = "../imgs/users" . $image_name;
+            $destination_path = "../images/users/" . $image_name;
 
             $upload = move_uploaded_file($source_path, $destination_path);
 
@@ -95,7 +110,7 @@ if (isset($_POST['submit'])) {
             }
 
             if ($current_image != "") {
-                $path = "../imgs/users" . $image_name;
+                $path = "../images/users/" . $current_image;
 
                 $remove = unlink($path);
 
@@ -114,14 +129,14 @@ if (isset($_POST['submit'])) {
 
     $sql2 = "UPDATE tbl_admin SET
     full_name = '$full_name',
-    username = '$full_name',
+    username = '$username',
     email = '$email',
     image_name = '$image_name'
     WHERE id=$id
     ";
     $res2 = mysqli_query($conn, $sql2);
 
-    if ($res == true) {
+    if ($res2 == true) {
         $_SESSION['update'] = "Admin updated succesfully";
         header("location:manage-admin.php");
     } else {
