@@ -1,7 +1,7 @@
 <?php
 
 // session
-// session_start();
+session_start();
 
 // constants to store repeating values
 define('SITEURL', 'http://localhost/BLOG-CMS/');

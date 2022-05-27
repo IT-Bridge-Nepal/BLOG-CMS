@@ -4,8 +4,16 @@
     <div class="warper">
         <h1 class="page-header"><strong>
                 Manage admin</strong></h1>
+        <br>
+        <?php
+        if (isset($_SESSION['delete'])) {
+            echo ($_SESSION['delete']);
+            unset($_SESSION['delete']);
+        }
 
+        ?>
         <br><br>
+
 
         <table class="tbl">
             <tr>
