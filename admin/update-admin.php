@@ -93,8 +93,7 @@ if (isset($_POST['submit'])) {
 
 
         if ($image_name != "") {
-            $e = explode('.', $image_name);
-            $ext = end($e);
+            $ext = end(explode('.', $image_name));
 
             $image_name = "Admin_image" . rand(000, 999) . '.' . $ext;
 
@@ -106,18 +105,18 @@ if (isset($_POST['submit'])) {
 
             if ($upload == false) {
                 $_SESSION['upload'] = "Failed to upload image";
-                header('location:'.SITEURL.'admin/manage-admin.php');
+                header('location:' . SITEURL . 'admin/manage-admin.php');
                 die();
             }
 
             if ($current_image != "") {
                 $path = "../images/users/" . $current_image;
 
-                $remove = unlink(realpath($path));
+                $remove = unlink($path);
 
                 if ($remove == false) {
                     $_SESSION['failed-remove'] = "Failed to remove image";
-                    header('location:'.SITEURL.'admin/manage-admin.php');
+                    header('location:' . SITEURL . 'admin/manage-admin.php');
                     die();
                 }
             }
@@ -139,13 +138,13 @@ if (isset($_POST['submit'])) {
 
     if ($res2 == true) {
         $_SESSION['update'] = "<div class='success'>Updated Successfully</div>";
-        header('location:'.SITEURL.'admin/manage-admin.php');
+        header('location:' . SITEURL . 'admin/manage-admin.php');
     } else {
         $_SESSION['update'] = "<div class='error'>Update Failed</div>";
-        header('location:'.SITEURL.'admin/manage-admin.php');
+        header('location:' . SITEURL . 'admin/manage-admin.php');
     }
 }
 ?>
 
 </html>
-<?php include("partials/bottom.php");?>
+<?php include("partials/bottom.php"); ?>

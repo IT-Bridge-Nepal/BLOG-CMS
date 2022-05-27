@@ -1,5 +1,5 @@
-<?php 
-include("includes/db.php"); 
+<?php
+include("includes/db.php");
 // session_start();
 
 if (isset($_POST['submit'])) {
@@ -15,18 +15,17 @@ if (isset($_POST['submit'])) {
     // var_dump($count);
     // die();
 
-    if ($count==1) {
+    if ($count == 1) {
+        $row = mysqli_fetch_assoc($res);
+        $full_name = $row['full_name'];
         $_SESSION['login'] = "<div class='success'>login success</div>";
-                $_SESSION['user'] = $username;
+        $_SESSION['user'] = $full_name;
 
-        header('location:'.SITEURL.'admin/index.php');
+
+        header('location:' . SITEURL . 'admin/index.php');
+    } else {
+        //button not clicked
+        $_SESSION['login'] = "<div class='error'>Password or Username didnot matched</div>";
+        header('location:' . SITEURL . 'admin.php');
     }
- else {
-    //button not clicked
-    $_SESSION['login'] = "<div class='error'>Password or Username didnot matched</div>";
-    header('location:'.SITEURL.'admin.php');
 }
-}
-
-
-?>
