@@ -68,7 +68,7 @@
 
 <ol class="breadcrumb">
     <li>
-        <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
+        <i class="fa fa-dashboard"></i> <a href="manage-category.php">To the Top</a>
     </li>
 
 </ol>
