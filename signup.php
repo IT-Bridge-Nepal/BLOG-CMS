@@ -17,7 +17,7 @@
 
                 <div class="col-md-6 login-right">
                     <h2>Register Here</h2>
-                    <form action="" method="post">
+                    <form action="admin/add-users.php" enctype="multipart/form-data" method="post">
                         <div class="form-group">
                             <label>Full Name:</label>
                             <input type="text" name="full_name" class="form-control" required>
@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <input type="file" name="image">
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
                     </form>
                 </div>
             </div>
