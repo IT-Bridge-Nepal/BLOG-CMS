@@ -75,19 +75,19 @@ include('login-check.php');
                         <a href="index.php"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="category.php">Category</a>
+                        <a href="manage-category.php">Category</a>
                     </li>
                     <li>
-                        <a href="posts.php">Posts</a>
+                        <a href="manage-posts.php">Posts</a>
                     </li>
                     <li>
-                        <a href="services.php">Services</a>
+                        <a href="manage-services.php">Services</a>
                     </li>
                     <li>
-                        <a href="testimonials.php">Testimonials</a>
+                        <a href="manage-testimonials.php">Testimonials</a>
                     </li>
                     <li>
-                        <a href="gallery.php">Galery</a>
+                        <a href="manage-gallery.php">Galery</a>
                     </li>
 
                     <li>

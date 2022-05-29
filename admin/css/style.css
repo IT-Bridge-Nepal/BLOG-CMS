@@ -11,6 +11,7 @@ table tr th {
 }
 table tr td{
     padding: 2%;
+    text-align: center;
 }
 .btn-third{
     padding: 1%;

@@ -1,4 +1,6 @@
-<?php include("partials-front.php/menu.php"); ?>
+<?php include("partials-front.php/menu.php"); 
+include("includes/db.php");?>
+
 <!-- Page Content -->
 <div class="container">
 
@@ -95,30 +97,32 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
+                            <?php
+            $sql = "SELECT * from tbl_category";
+            $res = mysqli_query($conn, $sql);
+            // var_dump($res);
+            // die;
+            if ($res == TRUE) {
+                $count = mysqli_num_rows($res);
+                $sn = 1;
+                if ($count > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $id = $row['id'];
+                        $category_title = $row['category_title'];
+                        ?>
+
+                        <li><a href="#"><?php echo $category_title; ?></a>
                             </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
+                            <?php
+                    }
+                }
+            }
+            ?>
+                            
+                           
                         </ul>
                     </div>
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.col-lg-6 -->
+                   
                 </div>
                 <!-- /.row -->
             </div>

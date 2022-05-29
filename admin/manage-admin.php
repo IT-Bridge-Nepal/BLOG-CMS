@@ -82,13 +82,7 @@
                     echo "we do not have data";
                 }
             }
-
-
             ?>
-
-
-
-
     </div>
 </div>
 
