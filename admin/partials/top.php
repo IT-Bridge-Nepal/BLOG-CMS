@@ -2,6 +2,20 @@
 
 include('login-check.php');
 
+$id = $_SESSION['userid'];
+
+
+$sql = "SELECT * FROM tbl_admin WHERE id='$id'";
+// var_dump($sql);
+// die;
+$res = mysqli_query($conn, $sql);
+
+if ($res == true) {
+    $row = mysqli_fetch_assoc($res);
+    $full_name = $row['full_name'];
+    $image_name = $row['image_name'];
+}
+
 ?>
 <!-- <!DOCTYPE html> -->
 <html lang="en">
@@ -53,7 +67,7 @@ include('login-check.php');
             <ul class="nav navbar-right top-nav">
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img class="rounded-img" src="<?php echo SITEURL; ?>images/users/<?php echo $_SESSION['image']; ?>"> <?php echo $_SESSION['user']; ?><b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img class="rounded-img" src="<?php echo SITEURL; ?>images/users/<?php echo $image_name; ?>"> <?php echo $full_name; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>

@@ -17,11 +17,16 @@ if (isset($_POST['submit'])) {
 
     if ($count == 1) {
         $row = mysqli_fetch_assoc($res);
+        $id = $row['id'];
         $full_name = $row['full_name'];
         $image_name = $row['image_name'];
         $_SESSION['login'] = "<div class='success'>login success</div>";
         $_SESSION['user'] = $full_name;
         $_SESSION['image'] = $image_name;
+        $_SESSION['userid'] = $id;
+
+        // var_dump($_SESSION['userid']);
+        // die;
 
 
         header('location:' . SITEURL . 'admin/index.php');
