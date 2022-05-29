@@ -86,7 +86,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $current_image = $_POST['current_image'];
-    unset($_SESSION['image']);
 
     if (isset($_FILES['image']['name'])) {
         $image_name = $_FILES['image']['name'];
@@ -135,7 +134,6 @@ if (isset($_POST['submit'])) {
     WHERE id=$id
     ";
 
-    $_SESSION['image'] = $image_name;
 
     $res2 = mysqli_query($conn, $sql2);
 
