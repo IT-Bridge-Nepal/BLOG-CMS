@@ -82,8 +82,6 @@
                     echo "we do not have data";
                 }
             }
-
-
             ?>
         </table>
 
